@@ -14,9 +14,18 @@ This **Dockerfile** is related to this **docker** image:
 
 **Dev environment**
 
+**C**
 + gcc
++ make
++ valgrind
+
+**Python**
+
 + python
 + virtualenv
+
+**Shell**
+
 + zsh
 + vim
 + git
@@ -24,12 +33,13 @@ This **Dockerfile** is related to this **docker** image:
 **Network protocols**
 
 + openssh
-+ kerberos
++ [kerberos](https://github.com/gcamerli/42krb)
 
 **42**
 
-+ examshell
-+ norminette
++ [norminette](https://github.com/gcamerli/42norme)
++ [examshell](https://github.com/gcamerli/42examshell) (:warning: in progress)
+
 
 ### **Shell scripts**
 
