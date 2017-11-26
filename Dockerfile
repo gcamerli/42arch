@@ -12,7 +12,7 @@ RUN pacman -Syu --noconfirm \
 	git \
 	binutils \
 	gcc \
-    valgrind \
+	valgrind \
 	make \
 	patch \
 	htop \
@@ -29,11 +29,11 @@ RUN pacman -Syu --noconfirm \
 	yasm \
 	openssh \
 	xorg-server \
-    python \
-    python2 \
-    python-pip \
-    python-virtualenv \
-    python2-virtualenv
+	python \
+	python2 \
+	python-pip \
+	python-virtualenv \
+	python2-virtualenv
 
 # Set no password for docker user
 RUN pacman --noconfirm -S sudo
