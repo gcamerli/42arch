@@ -12,7 +12,7 @@ RUN pacman -Syu --noconfirm \
 	git \
 	binutils \
 	gcc \
-  valgrind \
+    valgrind \
 	make \
 	patch \
 	htop \
@@ -29,11 +29,11 @@ RUN pacman -Syu --noconfirm \
 	yasm \
 	openssh \
 	xorg-server \
-  python \
-  python2 \
-  python-pip \
-  python-virtualenv \
-  python2-virtualenv
+    python \
+    python2 \
+    python-pip \
+    python-virtualenv \
+    python2-virtualenv
 
 # Set no password for docker user
 RUN pacman --noconfirm -S sudo
@@ -57,8 +57,8 @@ WORKDIR $HOME
 RUN rm -rf package-query/ yaourt/
 
 # Install from AUR
-RUN	yaourt --noconfirm -S zsh
-RUN	yaourt --noconfirm -S vim
+RUN yaourt --noconfirm -S zsh
+RUN yaourt --noconfirm -S vim
 
 # Install pip package
 RUN sudo pip install pika
