@@ -12,6 +12,7 @@ RUN pacman -Syu --noconfirm \
 	git \
 	binutils \
 	gcc \
+  valgrind \
 	make \
 	patch \
 	htop \
@@ -27,7 +28,12 @@ RUN pacman -Syu --noconfirm \
 	autogen \
 	yasm \
 	openssh \
-	xorg-server
+	xorg-server \
+  python \
+  python2 \
+  python-pip \
+  python-virtualenv \
+  python2-virtualenv
 
 # Set no password for docker user
 RUN pacman --noconfirm -S sudo
@@ -50,31 +56,27 @@ RUN makepkg --noconfirm -si
 WORKDIR $HOME
 RUN rm -rf package-query/ yaourt/
 
-# Set environment variables
-#ENV PATH=$PATH:$HOME/norminette
-
 # Install from AUR
 RUN	yaourt --noconfirm -S zsh
 RUN	yaourt --noconfirm -S vim
-RUN	sudo pacman --noconfirm -S python
-RUN	sudo pacman --noconfirm -S python2
-RUN	sudo pacman --noconfirm -S python-pip
-RUN	sudo pacman --noconfirm -S python-virtualenv
-RUN	sudo pacman --noconfirm -S python2-virtualenv
-RUN	sudo pacman --noconfirm -S python-pip
 
 # Install pip package
 RUN sudo pip install pika
 
-# Clone and set examshell
-RUN git clone --progress --verbose https://github.com/lefta/examshell42.git examshell
-WORKDIR $HOME/examshell
-RUN sudo ./install.sh
+# Clone and set kerberos
+RUN git clone --progress --verbose https://github.com/gcamerli/42krb.git kerberos
+WORKDIR $HOME/kerberos/script
+RUN sh run.sh
 WORKDIR $HOME
 
 # Clone norminette
-RUN git clone --progress --verbose https://github.com/lefta/Norminette42.git norminette
-WORKDIR $HOME
+RUN git clone --progress --verbose https://github.com/gcamerli/42norme.git norminette
+
+# Export variable for norminette
+#ENV PATH=$PATH:$HOME/norminette
+
+# Clone and set examshell
+RUN git clone --progress --verbose https://github.com/gcamerli/42examshell.git examshell
 
 # Set zsh as default shell
 RUN sudo chsh -s /usr/bin/zsh docker
