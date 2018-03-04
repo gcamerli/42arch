@@ -15,6 +15,7 @@ This **Dockerfile** is related to this **docker** image:
 **Dev environment**
 
 **C**
+
 + gcc
 + make
 + valgrind
@@ -38,8 +39,6 @@ This **Dockerfile** is related to this **docker** image:
 **42**
 
 + [norminette](https://github.com/gcamerli/42norme)
-+ [examshell](https://github.com/gcamerli/42examshell) (:warning: in progress)
-
 
 ### **Shell scripts**
 
@@ -51,9 +50,9 @@ To automate the operations with **docker** you can use the following scripts:
 + [clean.sh](script/clean.sh)
 + [remove.sh](script/remove.sh)
 
-### **GPL License**
+### **License**
 
-This work is licensed under the terms of **[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl.html)**.
+This work is published under the terms of **[42 Unlicense](https://github.com/gcamerli/42unlicense)**.
 
 ### **Donations**
 
