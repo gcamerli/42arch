@@ -1,6 +1,6 @@
 FROM base/archlinux:latest
 
-LABEL maintainer="https://gcamer.li"
+LABEL maintainer="Gius. Camerlingo <gcamerli@gmail.com>"
 
 # Add name to Docker image
 ENV NAME=42arch
@@ -40,7 +40,7 @@ RUN pacman --noconfirm -S sudo
 RUN echo "docker ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Create a new user
-RUN useradd -ms /bin/bash docker
+RUN useradd -ms /bin/zsh docker
 USER docker
 ENV HOME=/home/docker
 WORKDIR $HOME
