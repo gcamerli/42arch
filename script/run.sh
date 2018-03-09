@@ -1,4 +1,4 @@
 #!/bin/sh
 # ./run.sh
 
-docker run -h 42 -it gcamerli/42arch bash
+docker run -h 42 -it --name 42arch 42arch zsh

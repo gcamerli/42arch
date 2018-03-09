@@ -1,4 +1,4 @@
 #!/bin/sh
 # ./build.sh
 
-docker build -t gcamerli/42arch .
+docker build -t 42arch .
