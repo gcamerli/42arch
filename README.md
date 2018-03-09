@@ -47,7 +47,6 @@ To automate the operations with **docker** you can use the following scripts:
 + [build.sh](script/build.sh)
 + [run.sh](script/run.sh)
 + [stop.sh](script/stop.sh)
-+ [clean.sh](script/clean.sh)
 + [remove.sh](script/remove.sh)
 
 ### **License**
