@@ -75,9 +75,6 @@ RUN git clone --progress --verbose https://github.com/gcamerli/42norme.git normi
 # Export variable for norminette
 ENV PATH=$PATH:$HOME/norminette
 
-# Clone and set examshell
-RUN git clone --progress --verbose https://github.com/gcamerli/42examshell.git examshell
-
 # Set zsh as default shell
 RUN sudo chsh -s /usr/bin/zsh docker
 
